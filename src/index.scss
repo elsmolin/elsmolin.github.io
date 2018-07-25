@@ -1,0 +1,14 @@
+@import './scss/__variables.scss';
+// @import './scss/__mixins.scss';
+@import './scss/__icomoon.scss';
+@import './scss/__default.scss';
+@import './scss/onepage-scroll.scss';
+
+/* components */
+@import './scss/_tooltip.scss';
+@import './scss/_navbar.scss';
+
+/* pages */
+@import './scss/index.scss';
+
+/* во всех scss пути к картинкам/шрифтам относительно этого файла */

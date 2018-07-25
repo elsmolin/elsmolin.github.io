@@ -1,0 +1,78 @@
+extends ./components/_layout.pug
+
+block local_vars
+  - var title = "Главная страница"
+
+block bread_crumbs
+  
+block content
+  .main--bg
+  .one_page_love.main--sections
+    section.container(data-title="Intro")
+      .main--wrapper.main--about
+        .h1 Elijah Smolin
+    section.container(data-title="Works")
+      .main--wrapper.main--works
+        .h1(title="Примеры трудов (Interprise-CRM, Shop, Awesome Landing with WebGL, React Native App - Restaurant(B2C) & Auto(B2B))") Works
+        #slider-works.works--slider
+          article.works--item
+            .col-md-8
+              img(src="./img/img-devices.png", alt="", srcset="").img-fluid
+            .col-md-4
+              h2.h2 Project's title
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod perspiciatis accusamus provident quia earum saepe facilis nemo deserunt adipisci nostrum?
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam minima enim quos distinctio?
+          article.works--item
+            .col-md-8
+              img(src="./img/img-devices.png", alt="", srcset="").img-fluid
+            .col-md-4
+              h2.h2 Project's title
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod perspiciatis accusamus provident quia earum saepe facilis nemo deserunt adipisci nostrum?
+              p Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam minima enim quos distinctio?
+    section.container(data-title="Examples")
+      .main--wrapper
+        .h1(title="Самые интересные трюки, которые 'ВАУ!' + ссылка на JSFiddle/CodePen со всеми остальными примерами (Меню, слайдер, всплывахи, анимации)") Examples
+        .row
+          //- .col-md-6
+            p(data-height="250" data-theme-id="34113" data-slug-hash="ZjpBLK" data-default-tab="result" data-user="sirdavidoflee" data-embed-version="2" data-pen-title="Loading screen" class="codepen") See the Pen
+              a(href="https://codepen.io/sirdavidoflee/pen/ZjpBLK/") Loading screen
+              | by Dave Lee (
+              a(href="https://codepen.io/sirdavidoflee") @sirdavidoflee
+              | ) on 
+              a(href="https://codepen.io") CodePen
+            script(async src="https://static.codepen.io/assets/embed/ei.js")
+          .col-md-12
+            p(data-height="400" data-theme-id="34113" data-slug-hash="bjgpwZ" data-default-tab="result" data-user="gsans" data-embed-version="2" data-pen-title="Intro Title - Javascript is Peachy 🍑" class="codepen") See the Pen
+              a(href="https://codepen.io/gsans/pen/bjgpwZ/") Intro Title - Javascript is Peachy 🍑
+              | by Gerard Sans (
+              a(href="https://codepen.io/gsans") @gsans
+              | ) on 
+              a(href="https://codepen.io") CodePen
+            script(async src="https://static.codepen.io/assets/embed/ei.js")
+          //- .col-md-6
+            p(data-height="250" data-theme-id="34113" data-slug-hash="BPQmMZ" data-default-tab="result" data-user="YusukeNakaya" data-embed-version="2" data-pen-title="Only CSS: Jagged 2" class="codepen") See the Pen
+              a(href="https://codepen.io/YusukeNakaya/pen/BPQmMZ/") Only CSS: Jagged 2
+              | by Yusuke Nakaya (
+              a(href="https://codepen.io/YusukeNakaya") @YusukeNakaya
+              | ) on 
+              a(href="https://codepen.io") CodePen
+            script(async src="https://static.codepen.io/assets/embed/ei.js")
+          //- .col-md-6
+            p(data-height="250" data-theme-id="34113" data-slug-hash="MBJYyz" data-default-tab="result" data-user="sus-casasola9210" data-embed-version="2" data-pen-title="Neon Gooey Loader" class="codepen") See the Pen
+              a(href="https://codepen.io/sus-casasola9210/pen/MBJYyz/") Neon Gooey Loader
+              | by Sussie Casasola (
+              a(href="https://codepen.io/sus-casasola9210") @sus-casasola9210
+              | ) on 
+              a(href="https://codepen.io") CodePen
+            script(async src="https://static.codepen.io/assets/embed/ei.js")
+    section.container(data-title="Awesome")
+      .main--wrapper
+        .h1(title='Что я считаю "Awesome" и Gists (API Pinterest & Github-Gist) с табами (може будет полезно нарисовать отдельную страницу со списком "показать все", хотя проще будет перевести на сам профиль)') Awesome
+        .row
+          .col-md-6
+            a(data-pin-do="embedBoard" data-pin-board-width="900" data-pin-scale-height="350" data-pin-scale-width="300" href="https://www.pinterest.ru/elijahsmolin/%25D0%25B2%25D0%25B5%25D0%25B1-%25D0%25B4%25D0%25B8%25D0%25B7%25D0%25B0%25D0%25B9%25D0%25BD/")
+          .col-md-6
+            a(data-pin-do="embedPin" href="https://www.pinterest.com/pin/753790056359655252/")
+    section.container(data-title="Tools")
+      .main--wrapper
+        .h1(title='Какие использую библиотеки') Tools
