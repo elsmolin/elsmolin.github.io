@@ -1,10 +1,60 @@
 /* navbar */
+.main--menu {
+  left: 0;
+  right: 0;
+  height: 200px;
+  position: absolute;
+  transform: translateY(-200px);
+  background-color: $bg-color-light;
+  // z-index: 1;
+  transition: all .3s ease-in-out;
+  // box-shadow: inset 20px -1px $shadow-width-secondary $shadow-blur $color-primary, inset -20px -1px $shadow-width-secondary $shadow-blur $color-primary;
+
+  &.show--menu {
+    transform: translateY(0);
+  }
+}
+
 .navigation--menu {
   z-index: 1;
   position: absolute;
   top: 2%;
   left: 50px;
   transform: translateX(-50%);
+
+  &.show--menu {
+    .btn.btn-link {
+      span {
+
+        &:nth-child(3n+1) {
+          transform: translateX(9px);
+          z-index: -1;
+          opacity: 0;
+          transition-delay: 0s;
+        }
+  
+        &:nth-child(3n) {
+          transform: translateX(-9px);
+          z-index: -1;
+          opacity: 0;
+          transition-delay: 0s;
+        }
+  
+        &:nth-child(3n+2) {
+          background-color: $color-secondary;
+          margin: 0;
+          height: 14px;
+          width: 2px;
+          transform: translateY(7px) rotate(45deg);
+          transition-delay: .4s;
+        }
+  
+        &:nth-child(5) {
+          transform: translateY(-7px) rotate(-45deg);
+        }
+      }
+    }
+  }
 
   .btn.btn-link {
     width: 50px;
@@ -32,39 +82,6 @@
       &:nth-child(3n+2) {
         transform-origin: center;
         transition-delay: 0s;
-      }
-    }
-
-    &.active,
-    &:hover {
-      span {
-
-        &:nth-child(3n+1) {
-          transform: translateX(9px);
-          z-index: -1;
-          opacity: 0;
-          transition-delay: 0s;
-        }
-
-        &:nth-child(3n) {
-          transform: translateX(-9px);
-          z-index: -1;
-          opacity: 0;
-          transition-delay: 0s;
-        }
-
-        &:nth-child(3n+2) {
-          background-color: $color-secondary;
-          margin: 0;
-          height: 14px;
-          width: 2px;
-          transform: translateY(7px) rotate(45deg);
-          transition-delay: .4s;
-        }
-
-        &:nth-child(5) {
-          transform: translateY(-7px) rotate(-45deg);
-        }
       }
     }
   }

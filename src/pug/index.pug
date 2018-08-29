@@ -6,6 +6,32 @@ block local_vars
 block bread_crumbs
   
 block content
+  nav.navigation--user
+    button(type="button").btn.btn-link
+      img(src="./img/icon-user.jpg", alt="", srcset="").img-fluid
+  nav.navigation--share
+    span.btn.btn-link
+      i.icon-share-2
+      span shareit
+    button(type="button").btn.btn-link
+      i.icon-facebook
+    button(type="button").btn.btn-link
+      i.icon-instagram
+    button(type="button").btn.btn-link
+      i.icon-linkedin
+    button(type="button").btn.btn-link
+      i.icon-twitter
+    button(type="button").btn.btn-link
+      i.icon-send
+    button(type="button").btn.btn-link
+      i.icon-mail
+  nav.navigation--examples
+    a(href="https://github.com/elsmolin/" target="_blank").btn.btn-link
+      i.icon-github
+      span GitHub
+    a(href="https://codepen.io/elsmolin/" target="_blank").btn.btn-link
+      i.icon-codepen
+      span Codepen
   .main--bg
   .one_page_love.main--sections
     section.container(data-title="Intro")

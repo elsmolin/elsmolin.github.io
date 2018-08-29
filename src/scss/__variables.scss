@@ -90,7 +90,7 @@ $shadow-blur: 0;
 $shadow-color: $color-light;
 $shadow-color-secondary: $color-secondary;
 $shadow: $shadow-position $shadow-width $shadow-blur rgba($color: $shadow-color, $alpha: .26);
-$shadow-secondary: $shadow-position $shadow-width $shadow-blur rgba($color: $shadow-color-secondary, $alpha: .26);
+$shadow-secondary: $shadow-position-secondary $shadow-width-secondary $shadow-blur rgba($color: $shadow-color-secondary, $alpha: .26);
 
 // font
 $font-path: "../fonts" !default;
@@ -129,3 +129,4 @@ $border-secondary: $border-width-1 $border-style $border-color-secondary;
 // background
 $bg-color: $color-primary;
 $bg-color-secondary: $color-secondary;
+$bg-color-light: $color-light;

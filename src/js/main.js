@@ -46,6 +46,12 @@ const main = () => {
   $('.navigation--user .btn-link').on('click', function() {
     $('.user--about').toggleClass('show--modal');
   })
+
+  $('.navigation--menu').on('click', function() {
+    $(this, ).toggleClass('show--menu')
+    $('.content').toggleClass('show--menu')
+    $('.main--menu').toggleClass('show--menu')
+  })
 }
 
 export default main

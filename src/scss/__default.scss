@@ -91,6 +91,12 @@ a {
 .content {
   width: 100%;
   flex-grow: 1;
+  transition: all .3s ease-in-out;
+
+  &.show--menu {
+    box-shadow: $shadow-position-secondary $shadow-width-secondary $shadow-blur $color-primary;
+    transform: translateY(200px);
+  }
 }
 
 .picture {
