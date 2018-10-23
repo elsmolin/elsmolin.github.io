@@ -1,17 +1,69 @@
+@keyframes example {
+  0%  {
+    transform: translateY(-90%);
+  }
+  15%  {
+    transform: translateY(0);
+  }
+  #{(100 - 15)/6 * 2 + 15}%  {
+    transform: translateY(-10%);
+  }
+  #{(100 - 15)/6 * 4 + 15}%  {
+    transform: translateY(0);
+  }
+  #{(100 - 15)/6 * 5 + 15}% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 /* navbar */
 .main--menu {
   left: 0;
   right: 0;
   height: 200px;
+  background-color: $color-light;
   position: absolute;
   transform: translateY(-200px);
-  background-color: $bg-color-light;
-  // z-index: 1;
   transition: all .3s ease-in-out;
-  // box-shadow: inset 20px -1px $shadow-width-secondary $shadow-blur $color-primary, inset -20px -1px $shadow-width-secondary $shadow-blur $color-primary;
-
+  display: flex;
+  z-index: 1;
   &.show--menu {
     transform: translateY(0);
+  }
+  &-item {
+    width: 20%;
+    flex-grow: 1;
+    z-index: 0;
+    display: flex;
+    border-left: 1px solid transparent;
+    border-right: 1px solid transparent;
+    transition: all .3s ease-in-out;
+    &:hover {
+      border-left: 1px solid $color-primary;
+      border-right: 1px solid $color-primary;
+      box-shadow: -3px 12px 20px 0 rgba($color: #262626, $alpha: .5);
+      z-index: 1;
+    }
+    &-content {
+      
+    }
+    &-wrapper {
+      transform: translateY(-90%);
+      flex-grow: 1;
+      // background-color: transparent;
+      background-color: $color-secondary;
+      transition: all .3s ease-in-out;
+      &:hover {
+        transform: translateY(0);
+        background-color: $color-secondary;
+        animation-name: example;
+        animation-duration: 1s;
+        animation-play-state: running;
+        animation-timing-function: ease-in-out;
+      }
+    }
   }
 }
 
@@ -278,4 +330,12 @@
   padding-top: 40px;
   padding-bottom: 30px;
   box-shadow: $shadow-secondary;
+}
+
+.map {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 400px;
 }

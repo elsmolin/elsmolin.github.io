@@ -254,3 +254,9 @@ select {
     display: none;
   }
 }
+
+.spacer {
+  &--top {
+    height: 100px;
+  }
+}

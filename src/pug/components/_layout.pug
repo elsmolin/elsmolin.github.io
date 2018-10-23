@@ -16,10 +16,11 @@ html
     block bread_crumbs
       //- bread-crumbs
       //- include ./bread-crumbs.pug
-    main.content
       //- content page
-      block content
-        h1 Default content
+    block content_first
+      h1 Default content
+    block content_second
+      h1 Default content
     block footer
       //- footer
       include ./footer.pug

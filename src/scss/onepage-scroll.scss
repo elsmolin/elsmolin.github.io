@@ -2,14 +2,19 @@
 body, html {
   margin: 0;
   overflow: hidden;
-  -webkit-transition: opacity 400ms;
-  -moz-transition: opacity 400ms;
-  transition: opacity 400ms;
   display: block;
   position: relative;
   width: 100%;
   height: 100%;
   padding: 0;
+  transition: all .3s ease-in-out;
+  transform: translateY(0px);
+
+  &.show--menu {
+    box-shadow: $shadow-position-secondary $shadow-width-secondary $shadow-blur $color-primary;
+    transform: translateY(200px);
+    background-color: $bg-color-light;
+  }
 
   &.disabled-onepage-scroll {
     position: inherit;
@@ -29,6 +34,11 @@ html {
   left: 0;
   padding: 0;
   -webkit-transform-style: preserve-3d;
+  margin-top: 0px;
+  transition: all .3s ease-in-out;
+  &.show--menu {
+    margin-top: 200px;
+  }
   
   .section {
     width: 100%;
@@ -47,28 +57,41 @@ html {
   list-style: none;
   margin: 0;
   padding: 0;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(-90deg);
+  display: flex;
+  flex-direction: row-reverse;
 
   li {
-    height: 25px;
-    width: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0 5px;
+    padding: 0 5px;
+    background: $color-light;
+    overflow: hidden;
+    height: 20px;
 
     a {
-      width: 6px;
-      height: 6px;
-      background: $color-light;
-      border-radius: 10px;
-      transition: all .4s ease-in-out;
+      display: inline-flex;
+      align-items: center;
+      height: inherit;
       transition-delay: .4s;
-
+      margin: 0 -5px;
+      padding: 0 5px;
+      color: transparent;
+      font-size: 0;
+      overflow: hidden;
+      // transform: scaleX(0.1);
+      transition: transform .4s linear, font-size .4s linear, color .4s linear, background .4s linear;
+      &:hover {
+        text-decoration: none;
+      }
       &.active {
-        width: 10px;
-        height: 10px;
+        font-size: 16px;
+        color: white;
         background: $color-secondary;
         box-shadow: 0 0 3px $color-light;
+        // transform: scaleX(1);
       }
     }
   }

@@ -3,7 +3,7 @@ const main = () => {
     sectionContainer: "section",     // sectionContainer accepts any kind of selector in case you don't want to use section
     easing: "ease-in-out",                  // Easing options accepts the CSS3 easing animation such "ease", "linear", "ease-in",
                                      // "ease-out", "ease-in-out", or even cubic bezier value such as "cubic-bezier(0.175, 0.885, 0.420, 1.310)"
-    animationTime: 1000,             // AnimationTime let you define how long each section takes to animate
+    animationTime: 300,             // AnimationTime let you define how long each section takes to animate
     pagination: true,                // You can either show or hide the pagination. Toggle true for show, false for hide.
     updateURL: false,                // Toggle this true if you want the URL to be updated automatically when the user scroll to each page.
     beforeMove: function(index) {},  // This option accepts a callback function. The function will be called before the page moves.
@@ -17,11 +17,11 @@ const main = () => {
   });
 
   // config tooltip
-  $('.onepage-pagination a').attr('data-toggle', 'tooltip')
+  // $('.onepage-pagination a').attr('data-toggle', 'tooltip')
   $('.one_page_love > section').each(function(key, value) {
     const title = $(value).attr('data-title');
 
-    $('.onepage-pagination a').eq(key).attr('title', title)
+    $('.onepage-pagination a').eq(key).text(title)
   })
 
   // init tooltip
@@ -48,10 +48,58 @@ const main = () => {
   })
 
   $('.navigation--menu').on('click', function() {
-    $(this, ).toggleClass('show--menu')
-    $('.content').toggleClass('show--menu')
+    $(this).toggleClass('show--menu')
+    $('.onepage-wrapper').toggleClass('show--menu')
     $('.main--menu').toggleClass('show--menu')
   })
+
+  $('.select--examples').on('change', function() {
+    const prop = $(this).prop('value')
+    $('#examples--navigation').toggleClass()
+    $('#examples--navigation').addClass(`examples--navigation ${prop}`)
+  })
+  
+  if ($('#map').length > 0) {
+    ymaps.ready(init);
+
+    function init() {
+      // Создаем карту.
+      const myMap = new ymaps.Map("map", {
+        center: [45.976865, 39.360798],
+        zoom: 12,
+        controls: []
+      }, {
+        searchControlProvider: 'yandex#search'
+      });
+
+      // Стилизуем контент на иконке
+      // const MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+      //   '<div style="color: #FFFFFF; font-weight: bold; text-align: center; width: 36px;">$[properties.iconContent]</div>'
+      // );
+
+      // Создаем точку на карте
+      const point = new ymaps.Placemark([45.976865, 39.360798], {
+        hintContent: 'Собственный значок метки',
+        balloonContentHeader: 'Метка № 1',
+        balloonContentBody: 'Не мысля гордый свет забавить,</br>' +
+          'Вниманье дружбы возлюбя,</br>' +
+          'Хотел бы я тебе представить</br>' +
+          'Залог достойнее тебя,',
+        // iconContent: '15'
+      },{
+        // iconLayout: 'default#imageWithContent',
+        // iconLayout: 'default#image',
+        // iconImageHref: '../img/icon-placemark.png',
+        // iconImageSize: [30, 42],
+        // iconImageOffset: [-15, -42],
+        // iconContentOffset: [0, 10],
+        // iconContentLayout: MyIconContentLayout,
+      });
+
+      // Добавляем точку на карту
+      myMap.geoObjects.add(point);
+    }
+  }
 }
 
 export default main

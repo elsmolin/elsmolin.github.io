@@ -5,7 +5,7 @@ block local_vars
 
 block bread_crumbs
   
-block content
+block content_first
   nav.navigation--user
     button(type="button").btn.btn-link
       img(src="./img/icon-user.jpg", alt="", srcset="").img-fluid
@@ -13,17 +13,17 @@ block content
     span.btn.btn-link
       i.icon-share-2
       span shareit
-    button(type="button").btn.btn-link
+    a(href="#").btn.btn-link
       i.icon-facebook
-    button(type="button").btn.btn-link
+    a(href="#").btn.btn-link
       i.icon-instagram
-    button(type="button").btn.btn-link
+    a(href="#").btn.btn-link
       i.icon-linkedin
-    button(type="button").btn.btn-link
+    a(href="#").btn.btn-link
       i.icon-twitter
-    button(type="button").btn.btn-link
+    a(href="#").btn.btn-link
       i.icon-send
-    button(type="button").btn.btn-link
+    a(href="#").btn.btn-link
       i.icon-mail
   nav.navigation--examples
     a(href="https://github.com/elsmolin/" target="_blank").btn.btn-link
@@ -33,7 +33,9 @@ block content
       i.icon-codepen
       span Codepen
   .main--bg
-  .one_page_love.main--sections
+  
+block content_second
+  main.one_page_love.main--sections
     section.container(data-title="Intro")
       .main--wrapper.main--about
         .h1 Elijah Smolin
@@ -57,8 +59,7 @@ block content
               p Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam minima enim quos distinctio?
     section.container(data-title="Examples")
       .main--wrapper
-        .h1(title="Самые интересные трюки, которые 'ВАУ!' + ссылка на JSFiddle/CodePen со всеми остальными примерами (Меню, слайдер, всплывахи, анимации)") Examples
-        .row
+        a.h1(href="./examples.html" title="Самые интересные трюки, которые 'ВАУ!' + ссылка на JSFiddle/CodePen со всеми остальными примерами (Меню, слайдер, всплывахи, анимации)") Examples
           //- .col-md-6
             p(data-height="250" data-theme-id="34113" data-slug-hash="ZjpBLK" data-default-tab="result" data-user="sirdavidoflee" data-embed-version="2" data-pen-title="Loading screen" class="codepen") See the Pen
               a(href="https://codepen.io/sirdavidoflee/pen/ZjpBLK/") Loading screen
@@ -67,7 +68,7 @@ block content
               | ) on 
               a(href="https://codepen.io") CodePen
             script(async src="https://static.codepen.io/assets/embed/ei.js")
-          .col-md-12
+          //- .col-md-12
             p(data-height="400" data-theme-id="34113" data-slug-hash="bjgpwZ" data-default-tab="result" data-user="gsans" data-embed-version="2" data-pen-title="Intro Title - Javascript is Peachy 🍑" class="codepen") See the Pen
               a(href="https://codepen.io/gsans/pen/bjgpwZ/") Intro Title - Javascript is Peachy 🍑
               | by Gerard Sans (
