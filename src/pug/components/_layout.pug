@@ -6,8 +6,23 @@ block local_vars
 
 html
   head
-    //- head
-    include ./head.pug
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(http-equiv="X-UA-Compatible" content="ie=edge")
+    title Lapland | #{title}
+    link(rel="shortcut icon" href="./img/favicon.png" type="image/png")
+    //- bootstrap
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css")
+    //- selectize.js
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/css/selectize.min.css")
+    //- slick 1.8.1
+    link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css")
+    //- fancybox
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.css")
+    //- YaMap
+    script(src="https://api-maps.yandex.ru/2.1/?load=package.full&lang=ru-RU" type="text/javascript")
+    //- Main style
+    link(href="./css/index.css", rel="stylesheet")
   body
     block navbar
       //- header
@@ -24,3 +39,16 @@ html
     block footer
       //- footer
       include ./footer.pug
+
+    //- jquery
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+    //- bootstrap
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js")
+    script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js")
+    //- selectize.js
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.12.6/js/standalone/selectize.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js")
+    //- fancybox
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.js")
+    //- main JS
+    script(src="./js/index.js")

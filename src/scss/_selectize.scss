@@ -1,0 +1,25 @@
+/* selectize.js */
+.selectize {
+  &-dropdown {
+    &-content {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1 0 100%;
+      max-width: 100%;
+    }
+    .optgroup {
+      margin-bottom: 10px;
+      flex: 1 0 33.33333%;
+      // max-width: 33.33333%;
+      &-header {
+        border-bottom: 1px dashed #000;
+      }
+    }
+    .option {
+      cursor: not-allowed;
+      &[data-selectable] {
+        cursor: pointer;
+      }
+    }
+  }
+}
