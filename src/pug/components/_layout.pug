@@ -9,7 +9,7 @@ html
     meta(charset="UTF-8")
     meta(name="viewport" content="width=device-width, initial-scale=1")
     meta(http-equiv="X-UA-Compatible" content="ie=edge")
-    title Lapland | #{title}
+    title ESMKRD | #{title}
     link(rel="shortcut icon" href="./img/favicon.png" type="image/png")
     //- bootstrap
     link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css")
@@ -28,14 +28,15 @@ html
       //- header
       include ./navbar.pug
       //- include ./header-menu.pug
-    block bread_crumbs
+    //- block bread_crumbs
       //- bread-crumbs
       //- include ./bread-crumbs.pug
       //- content page
-    block content_first
-      h1 Default content
-    block content_second
-      h1 Default content
+    main.main
+      block content_first
+        h1 Default content
+      block content_second
+        h1 Default content
     block footer
       //- footer
       include ./footer.pug

@@ -1,0 +1,14 @@
+.footer {
+  &.style-ontop {
+    background-color: #ff4b00;
+  }
+  &__navigation {
+    &--link {
+      color: white;
+      text-decoration: none !important;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

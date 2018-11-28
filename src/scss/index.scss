@@ -1,96 +1,134 @@
-/* index page */
-.main {
-  &--bg {
-    background: $bg-color;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    &.style-white {
-      background: white;
-    }
-  }
-  &--sections {
-    section.container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-  }
-  &--wrapper {
-    display: block;
-    flex-grow: 1;
-    text-align: center;
-    max-width: 320px;
-  
-    @media (min-width: $max-width-container-sm) {
-      max-width: 320px;
-    }
-  
-    @media (min-width: $max-width-container-tablet) {
-      max-width: 666px;
-    }
-  
-    @media (min-width: $max-width-container-lg) {
-      max-width: 666px;
-    }
-  
-    @media (min-width: $max-width-container-desktop) {
-      max-width: 900px;
-    }
-  
-    @media (min-width: $max-width-container-retina) {
-      max-width: 1600px;
-    }
-  }
-  &--works {
-    .img-fluid {
-      max-height: 80vh;
-    }
-  }
-  &--btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: $border;
-    background-color: transparent;
-    color: $color-secondary;
-    height: 50px;
-    padding: 0 30px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family: $font;
-    font-size: 18px;
-  
-    &:hover {
-      text-decoration: none;
-      background-color: $color-secondary;
-      color: $color-white;
-    }
-  
-    &:focus,
-    &:active {
-      text-decoration: none;
-      background-color: darken($color: $color-secondary, $amount: 15%);
-      border-color: darken($color: $color-secondary, $amount: 15%);
-    }
-  }
-}
+$font-size-title: 30px;
+$font-size-text: 16px;
+$height: $font-size-text * 2 + $font-size-title;
 
-.works {
-  &--slider {
+
+/* index page */
+.index {
+  &__map {
+    display: flex;
+    flex: 1 0 100%;
+    max-width: 100%;
     width: 100%;
-  
-    .slick-slide {
-      height: auto;
+  }
+  &__contacts {
+    background-color: #ff4b00;
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    padding: 50px;
+    z-index: 10;
+    transform: translateY(-50%);
+    box-shadow: 0px 4px 15px 0 rgba($color: black, $alpha: .25);
+    a {
+      display: block;
     }
   }
-  &--item {
-    display: flex !important;
-    flex-basis: 100%;
+  &__section {
+    display: flex;
+    flex: 1 0 100%;
+    max-width: 100%;
+    align-items: center;
+    align-self: center;
+    position: relative;
+    &#contacts {
+      align-self: stretch;
+      align-items: stretch;
+    }
+  }
+  &__carousel {
+    height: 100%;
+    &--images {
+      width: 100%;
+      .slick-slide {
+        height: auto !important;
+      }
+      &-item {
+        height: 300px;
+        img {
+          max-height: 100%;
+        }
+      }
+    }
+    &--links {
+      width: 100%;
+      &-item {
+        height: $height;
+        transition: all .3s ease-in-out;
+        position: relative;
+        .h2, p {
+          line-height: 1;
+          margin-bottom: 0;
+          transition: font-size .3s ease-in-out,
+                      top .3s ease-in-out,
+                      bottom .3s ease-in-out,
+                      transform .3s ease-in-out;
+          position: absolute;
+        }
+        p {
+          height: 0;
+          max-height: $font-size-text * 2;
+          overflow: hidden;
+          bottom: 0;
+          opacity: 0;
+          transition: all .3s ease-in-out;
+        }
+      }
+      .slick-slide {
+        opacity: 0;
+        transition: all .3s ease-in-out;
+        .h2 {
+          top: 100%;
+          transform: translateY(0);
+          font-size: 0;
+        }
+        &.style-sm {
+          opacity: .4;
+          .h2 {
+            top: 100%;
+            transform: translateY(-100%);
+            font-size: $font-size-title * .5;
+          }
+        }
+        &.style-md {
+          opacity: .7;
+          .h2 {
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: $font-size-title * .75;
+          }
+        }
+        &.slick-current {
+          opacity: 1;
+          .h2 {
+            font-size: $font-size-title;
+            top: 0;
+            transform: translateY(0);
+          }
+          p {
+            height: $font-size-text * 2;
+            opacity: 1;
+          }
+          ~ .slick-slide {
+            .h2 {
+              top: 0;
+              transform: translateY(-100%);
+            }
+          }
+          ~ .style-md {
+            .h2 {
+              top: 50%;
+              transform: translateY(-50%);
+            }
+          }
+          ~ .style-sm {
+            .h2 {
+              top: 0;
+              transform: translateY(0);
+            }
+          }
+        }
+      }
+    }
   }
 }

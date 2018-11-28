@@ -3,16 +3,42 @@ extends ./components/_layout.pug
 block local_vars
   - var title = "Главная страница"
 
-block bread_crumbs
+//- block bread_crumbs
   
 block content_first
   include ./components/sidebar.pug
   
 block content_second
-  main.one_page_love.main--sections
+  //- section#mytools.main.index__section(style={'display':'none'})
+  section#mytools.index__section
+    .container
+      .row
+        .col-xl-4.d-flex.align-items-center
+          .index__carousel--links
+            each item in [1,2,3,4,5,6,7,8]
+              .index__carousel--links-item
+                .h2 Something title
+                p Something description like lorem ipsum. Lorem ipsum dolor sit amet consectetur adipisicing.
+        .col-xl-8.d-flex.align-items-center
+          .index__carousel--images
+            each item in [1,2,3,4,5,6,7,8]
+              .index__carousel--images-item
+                img.img-fluid(src="https://placeimg.com/640/480/any", alt="")
+  section#contacts.index__section(style={'display':'none'})
+    .index__contacts
+      .h3 Илья Смолин
+      .h6 Front-end разработчик, верстальщик
+      a(href="tel:+79180799275").h6 +7 (918) 079-92-75
+      a(href="mailto:is.smolin@ya.ru").h6 is.smolin@ya.ru
+      a(href="skype:smolin_is").h6 skype
+      a(href="https://t.me/elijahsmolinkrd").h6 Telegram
+    .index__map#map
+  //- main.index__main(style={'display':'none'})
+    
+  //- main.one_page_love.main--sections
     section.container(data-title="Intro")
       .main--wrapper.main--about
-        .h1 Elijah Smolin
+        .h1 Lapland
     section.container(data-title="Works")
       .main--wrapper.main--works
         .h1(title="Примеры трудов (Interprise-CRM, Shop, Awesome Landing with WebGL, React Native App - Restaurant(B2C) & Auto(B2B))") Works
