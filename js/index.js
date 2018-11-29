@@ -37,8 +37,12 @@ var main = function main() {
     console.log(isToDown, id.indexOf('#') == 0);
     var listLinks = ['#top', '#mytools', '#contacts'];
 
-    if (isToDown && id.indexOf('#') == 0 && id != '#contacts') {
-      id = listLinks[listLinks.indexOf(id) + 1];
+    if (isToDown && (id.indexOf('#') == 0 || !id) && id != '#contacts') {
+      if (!id) {
+        id = listLinks[1];
+      } else {
+        id = listLinks[listLinks.indexOf(id) + 1];
+      }
       $('.header__navigation--link').removeClass('active');
       $('.header__navigation--link[data-id="' + id + '"]').addClass('active');
       toggleScreens(id);
@@ -183,6 +187,9 @@ function initMap() {
 }
 
 function toggleScreens(id) {
+  if (!id) {
+    id = '#top';
+  }
   $('.index__section').hide();
   $('' + id).show();
   carouselImages.slick('setPosition');
@@ -190,6 +197,11 @@ function toggleScreens(id) {
   setTimeout(function () {
     myMap.container.fitToViewport();
   }, 1000);
+  if (id == '#top' || id == '') {
+    $('.header').removeClass('style-ontop');
+  } else {
+    $('.header').addClass('style-ontop');
+  }
 }
 
 function initCarouselLinks(slide) {

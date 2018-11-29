@@ -35,6 +35,13 @@ $height: $font-size-text * 2 + $font-size-title;
       align-self: stretch;
       align-items: stretch;
     }
+    &--img {
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
   }
   &__carousel {
     height: 100%;
