@@ -1,8 +1,11 @@
 /node_modules
 
-/dist
-/dist2
+/dist/img
+/dist/fonts
 /build
+/components
+/img
+/fonts
 
 # misc
 .DS_Store

@@ -1,0 +1,119 @@
+@import './__my__vars.scss';
+
+$f-background: $color-default !default;
+$f-height: 40px !default;
+$f-border: 1px !default;
+$f-border-color: lighten($color: $color-primary, $amount: 10%) !default;
+$f-border-color-focus: $color-primary !default;
+$f-radius: 6px !default;
+$f-padding-v: .375rem !default;
+$f-padding-h: 1.5rem !default;
+$f-font-size: $font-size !default;
+$f-text-color: $color-default !default;
+$f-text-muted: lighten($color: $color-default, $amount: 30%) !default;
+$f-text-weight: 400 !default;
+$f-placeholder-color: rgba($color: $color-default, $alpha: .5) !default;
+$f-placeholder-weight: 300 !default;
+$f-gutter: 20px !default;
+
+/* Стили для формы */
+
+// убираем возможность выделения текста
+label {
+  user-select: none;
+}
+
+// убираем нативные кнопки у input[type=number]
+input[type=number] {
+  text-align: center;
+  -moz-appearance:textfield;
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    display: none;
+  }
+}
+
+.form-row {
+  margin-left: -#{$f-gutter * .5};
+  margin-right: -#{$f-gutter * .5};
+  > [class*=col-] {
+    padding-left: #{$f-gutter * .5};
+    padding-right: #{$f-gutter * .5};
+  }
+}
+
+.form-text {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.text-muted {
+  color: $f-text-muted !important;
+}
+
+.form-group {
+  margin-bottom: 0;
+  &.style-default {
+    margin-bottom: 10px;
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 15px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.form-control {
+  &.style-default {
+    height: $f-height;
+    padding: $f-padding-v $f-padding-h;
+    border-radius: $f-radius;
+    font-size: $f-font-size;
+    font-weight: $f-text-weight;
+    background-color: $f-background;
+    border: $f-border solid $f-border-color;
+    color: $f-text-color;
+  
+    &:focus {
+      border: $f-border solid $f-border-color-focus;
+    }
+  
+    &:disabled,
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  
+    &:read-only {
+      pointer-events: none;
+      background: rgba($color: $f-background, $alpha: 0.5);
+      border: $f-border solid rgba($color: $f-border-color, $alpha: 0.5);
+    }
+  
+    &::placeholder {
+      color: $f-placeholder-color;
+      font-size: $f-font-size;
+      font-weight: $f-placeholder-weight;
+    }
+  }
+
+  &.form-control-lg {
+    height: $f-height * 1.25;
+    padding: #{$f-padding-v * 1.25} #{$f-padding-h * 1.25};
+    border-radius: $f-radius * 1.25;
+    font-size: $f-font-size * 1.25;
+  }
+
+  &.form-control-sm {
+    height: $f-height * .75;
+    padding: #{$f-padding-v * .75} #{$f-padding-h * .75};
+    border-radius: $f-radius * .75;
+    font-size: $f-font-size * .75;
+  }
+}
+
+textarea.form-control {
+  height: auto;
+}

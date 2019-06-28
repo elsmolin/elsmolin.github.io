@@ -1,18 +1,28 @@
-@import './scss/__variables.scss';
-// @import './scss/__mixins.scss';
-@import './scss/__icomoon.scss';
-@import './scss/__default.scss';
-// @import './scss/onepage-scroll.scss';
+@import './scss/__my__vars.scss';
+/*---ICOMOON---*/
+@import './scss/style.scss';
 
-/* components */
-@import './scss/_tooltip.scss';
-@import './scss/_selectize.scss';
-@import './scss/_navbar.scss';
+/*---CHUNKS---*/
+@import './scss/__fonts.scss';
+@import './scss/__reset.scss';
+@import './scss/__grid.scss';
+@import './scss/__text.scss';
+@import './scss/__button.scss';
+@import './scss/__form.scss';
+@import './scss/__form-custom.scss';
+@import './scss/__form-validated.scss';
+@import './scss/__tooltip.scss';
+
+/*---PLUGINS---*/
+@import './scss/__carousel.scss';
+// @import './scss/__datepicker.scss';
+@import './scss/__popup.scss';
+@import './scss/__select.scss';
+// @import './scss/__slider.scss';
+
+/*---CUSTOM_COMPONENTS---*/
 @import './scss/_header.scss';
 @import './scss/_footer.scss';
 
-/* pages */
-@import './scss/index.scss';
-@import './scss/examples.scss';
-
-/* во всех scss пути к картинкам/шрифтам относительно этого файла */
+/*---PAGES---*/
+@import './scss/landing.scss';

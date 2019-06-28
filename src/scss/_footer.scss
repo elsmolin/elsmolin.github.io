@@ -1,27 +1,8 @@
+@import './__my__vars.scss';
+
+/* Футер */
 .footer {
-  &.style-ontop {
-    background-color: #ff4b00;
-  }
-  &__navigation {
-    position: relative;
-    &::after {
-      content: "WorkInProgress";
-      font-family: $font;
-      position: absolute;
-      right: 15px;
-      color: white;
-      font-weight: 300;
-      font-size: 12px;
-      opacity: 0.5;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    &--link {
-      color: white;
-      text-decoration: none !important;
-      &:hover {
-        color: white;
-      }
-    }
+  &_wrapper_global {
+    
   }
 }
