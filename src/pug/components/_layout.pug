@@ -11,24 +11,24 @@ html(lang="ru")
     meta(name="format-detection" content="telephone=no")
     meta(http-equiv="X-UA-Compatible" content="ie=edge")
     meta(http-equiv="cache-control" content="no-cache")
-    link(rel="shortcut icon" href=`./img/favicon.png` type="image/png")
+    link(rel="shortcut icon" href=`./img/user.png` type="image/png")
     
     title NAME_PROJECT
 
     <!-- <include_styles> -->
     
-  body.body_global(data-page-custom-type= pageType class= pageClass)
-    noscript
+  body.body_global(data-page-custom-type= pageType class= pageClass)#particles-js
+    //- noscript
       p JavaScript is not supported in the your browser, or are disabled! Check Settings
-    block popups
+    //- block popups
       include ./popups.pug
-    header.header_wrapper_global
+    //- header.header_wrapper_global
       block navbar
         include ./header.pug
     main.main_wrapper_global
       block content
         h1 Default content
-    footer.footer_wrapper_global
+    //- footer.footer_wrapper_global
       block footer
         include ./footer.pug
 

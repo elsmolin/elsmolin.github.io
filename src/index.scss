@@ -4,25 +4,113 @@
 
 /*---CHUNKS---*/
 @import './scss/__fonts.scss';
-@import './scss/__reset.scss';
 @import './scss/__grid.scss';
-@import './scss/__text.scss';
-@import './scss/__button.scss';
-@import './scss/__form.scss';
-@import './scss/__form-custom.scss';
-@import './scss/__form-validated.scss';
-@import './scss/__tooltip.scss';
 
-/*---PLUGINS---*/
-@import './scss/__carousel.scss';
-// @import './scss/__datepicker.scss';
-@import './scss/__popup.scss';
-@import './scss/__select.scss';
-// @import './scss/__slider.scss';
+@keyframes bounce {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(15deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+}
 
 /*---CUSTOM_COMPONENTS---*/
-@import './scss/_header.scss';
-@import './scss/_footer.scss';
-
-/*---PAGES---*/
-@import './scss/landing.scss';
+.main {
+  &_wrapper_global {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 160px;
+    display: flex;
+    align-items: center;
+    background: radial-gradient(rgba($color: #fff, $alpha: 1), rgba($color: #fff, $alpha: 0));
+  }
+  &_logo {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-family: $font-title;
+    font-size: 24px;
+    color: #1b1b1b;
+    &:hover {
+      color: #1b1b1b;
+      text-decoration: none;
+      path {
+        fill: #1b1b1b;
+      }
+      #animate_this {
+        transform-origin: center;
+        animation: bounce .4s ease-out;
+      }
+    }
+    &.show .main_logo-text {
+      transition: all .6s ease-in-out;
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+    &-img {
+      display: inline-block;
+      width: 100px;
+      padding: 0 15px;
+      path {
+        transition: fill .4s ease-in-out;
+        fill: rgba($color: #000000, $alpha: 0);
+        stroke: #1b1b1b;
+      }
+      &.painted {
+        path {
+          fill: #1b1b1b;
+        }
+      }
+    }
+    &-text {
+      opacity: 0;
+      pointer-events: none;
+      &:first-child {
+        transform: translateX(-20px);
+      }
+      &:last-child {
+        transform: translateX(20px);
+      }
+    }
+  }
+  &_subnav {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    &.show .main_subnav-item {
+      transition: opacity .6s ease-in-out .6s, color .4s ease-in-out;
+      opacity: 1;
+      pointer-events: all;
+    }
+    &-item {
+      color: lighten($color: #1b1b1b, $amount: 70%);
+      display: inline-flex;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      &:hover {
+        text-decoration: none;
+        color: #1b1b1b;
+      }
+      [class*="icon_custom"] {
+        font-size: 20px;
+        display: inline-flex;
+        justify-content: center;
+        margin-right: 12px;
+      }
+    }
+  }
+}

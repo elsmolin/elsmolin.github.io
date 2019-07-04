@@ -1,3 +1,21 @@
-.container-fluid
-  .row
-    .col-12 Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, commodi obcaecati eius possimus quasi iure a sunt quo eos tempore doloribus consequuntur voluptatum et fuga qui labore praesentium neque, officia corporis dolore ipsa nam adipisci distinctio voluptatibus.
+.header_row
+  a(href="/").header_text-wrapper.header_logo
+    //- object(id="my-svg" type="image/svg+xml" data="./img/user.svg").header_logo-img
+    //- img.img-fluid(id="my-svg" src="./img/user.svg").header_logo-img
+    #logo_svg.header_logo-img
+    //- span.icon_custom-logo.header_logo-icon
+    span.header_text.header_logo-text Root Name
+  nav.header_nav
+    a(href="").header_text-wrapper.header_nav-item
+      span.icon_custom-hire
+      span.header_text To hire
+    a(href="").header_text-wrapper.header_nav-item
+      span.icon_custom-demo
+      span.header_text Demo
+  nav.header_subnav
+    a(href="https://codepen.io/elsmolin").header_text-wrapper.header_subnav-item
+      span.icon_custom-codepen
+      span.header_text CodePen
+    a(href="https://github.com/elsmolin").header_text-wrapper.header_subnav-item
+      span.icon_custom-github_light
+      span.header_text GitHub

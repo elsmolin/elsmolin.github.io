@@ -2,7 +2,37 @@
 
 /* Стили для попапов */
 .popup {
-  
+  &-custom {
+    &-clone {
+      position: absolute;
+      z-index: 1;
+      opacity: 0;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+      transition: filter .6s ease-in-out;
+      &.opened {
+        position: fixed;
+        opacity: 1;
+        top: 0;
+        bottom: 0;
+        left: auto;
+        right: auto;
+        pointer-events: all;
+      }
+      &.loading {
+        filter: grayscale(100%);
+      }
+      &.loaded {
+        filter: grayscale(0);
+        .carousel_item-img {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
 }
 
 .fancybox-slide--html {

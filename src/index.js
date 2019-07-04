@@ -1,36 +1,21 @@
-import { landingInit } from './js/landing'
-import { inputmaskInit, inputMask } from "./js/inputmask"
-import { tooltipInit, tooltip } from "./js/tooltip"
-import { selectInit, select } from "./js/select"
-import { popupInit } from "./js/popup"
-import { carouselInit, carousel } from "./js/carousel"
-import { formInit, form } from "./js/form"
-import { headerInit } from "./js/header"
-
-import { demoInit } from "./js/_demoJS"
-
-window._custom_ = {
-  inputMask,
-  // form,
-  // tooltip,
-  // select,
-  // carousel,
+window.onload = function() {
+  /* Vivus.js | Анимирование рисования логотипа */
+  const _vivus = new Vivus('logo_svg', {
+      file: '../img/user.svg',
+      type: 'scenario-sync',
+      duration: 20,
+      start: 'autostart',
+      dashGap: 20,
+      forceRender: false
+    },
+    function () {
+      document.getElementById('logo_svg').classList.add('painted')
+      document.getElementById('main_logo').classList.add('show')
+      document.getElementById('main_subnav').classList.add('show')
+    })
+  
+  /* Particles.js | Background */
+  particlesJS.load('particles-js', '../css/particles.json', function() {
+    console.log('callback - particles.js config loaded');
+  });
 }
-
-$(document).ready(function(){
-  /* Компоненты */
-  inputmaskInit()
-  // tooltipInit()
-  // selectInit()
-  // popupInit()
-  // carouselInit()
-  // formInit()
-  headerInit()
-
-  /* Скрипты необходимые только на конкретной странице */
-  landingInit()
-
-  //removeIf(production)
-  demoInit()
-  //endRemoveIf(production)
-})

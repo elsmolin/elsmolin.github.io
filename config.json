@@ -1,17 +1,13 @@
 {
-  "name_project": "Название проекта",
+  "name_project": "Elijah Smolin",
   "js": [
-    "jquery.min.js",
-    "popper.min.js",
-    "bootstrap.min.js",
-    "jquery.inputmask.bundle.js",
+    "particles.js",
+    "vivus.min.js",
     "index.min.js"
   ],
   "jsProd": [
-    "jquery.min.js",
-    "popper.min.js",
-    "bootstrap.min.js",
-    "jquery.inputmask.bundle.js",
+    "particles.js",
+    "vivus.min.js",
     "index.min.js"
   ],
   "css": [
